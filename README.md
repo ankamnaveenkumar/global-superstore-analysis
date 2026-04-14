@@ -1,4 +1,4 @@
-# 📊 Global Superstore Sales Analysis | SQL + Power BI
+# 📊 Global Superstore Sales & Profitability Analysis | Python + Power BI + MySql + Excel
 
 ## 🧠 Objective
 
@@ -22,7 +22,8 @@ This project identifies the root causes and provides data-driven recommendations
 
 * SQL (Data Analysis & Querying)
 * Power BI (Dashboard & Visualization)
-* Python (EDA & Data Processing)
+* Python (Pandas, Matplotlib, Numpy)
+* Excel
 
 ---
 
