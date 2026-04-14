@@ -1,4 +1,4 @@
-# 🛒 Walmart Sales Analysis | End-to-End Data Analyst Project
+# 🛒 Global Superstore Sales Profitability Analysis
 
 ## 📌 Objective
 
