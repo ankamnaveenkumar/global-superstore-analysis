@@ -47,8 +47,9 @@ Contains transactional data including sales, profit, discounts, customers, produ
 
 ### Executive Overview
 
+![Executive Overview](Dashboard/executive_overview.png)
 ![Executive Overview](images/executive_overview.png)
-
+https://github.com/ankamnaveenkumar/global-superstore-analysis/blob/main/Dashboard/executive_overview.png
 ### Profitability & Performance Analysis
 
 ![Profitability Dashboard](images/profitability_dashboard.png)
