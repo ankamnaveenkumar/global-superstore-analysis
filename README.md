@@ -1,130 +1,202 @@
-# 📊 Global Superstore Sales & Profitability Analysis | Python + Power BI + MySql + Excel
+# 🛒 Walmart Sales Analysis | End-to-End Data Analyst Project
 
-## 🧠 Objective
+## 📌 Objective
 
-To perform exploratory data analysis on retail sales data to uncover key factors affecting profitability, including discount strategies, product category performance, customer purchasing behavior, and regional trends, and to identify actionable opportunities for improving business performance.
+Analyze sales, profitability, and customer behavior data to identify key drivers of revenue growth, detect profit leakage, and provide actionable recommendations to improve business performance and operational efficiency.
+
+---
+## ❓ Business Questions
+
+- How is the overall business performing in terms of sales and profitability?
+- Which categories and products are driving profit vs loss?
+- How do discounts impact profitability?
+- Are there high-sales but loss-making transactions?
+- What are the trends in sales and profit over time?
+- Who are the most valuable and repeat customers?
+- Which regions contribute most to revenue and profit?
+----
+## 🧰 Tools & Technologies
+
+* **Python** (Pandas, Matplotlib, Seaborn) → ETL & EDA
+* **MySQL** → Business query analysis
+* **Power BI** → Interactive dashboard & storytelling
 
 ---
 
-## ❗ Business Problem
+## 🔧 ETL Process (Python)
 
-The business is experiencing inconsistent profitability due to:
+* Data extraction from source dataset
+* Data cleaning (missing values, duplicates, formatting)
+* Feature engineering:
 
-* High discounting practices
-* A large proportion of loss-making orders
-* Uneven performance across categories and regions
-
-This project identifies the root causes and provides data-driven recommendations.
-
----
-
-## 🛠️ Tools & Technologies
-
-* SQL (Data Analysis & Querying)
-* Power BI (Dashboard & Visualization)
-* Python (Pandas, Matplotlib, Numpy)
-* Excel
+  * Profit Margin = Profit / Sales
+  * Delivery Days = Ship Date - Order Date
+  * Time-based features (Year, Month)
+* Prepared dataset for analysis and visualization
 
 ---
 
-## 📂 Dataset
+## 📊 Exploratory Data Analysis (Python)
 
-Dataset sourced from Kaggle – Global Superstore Dataset.
-Contains transactional data including sales, profit, discounts, customers, products, and shipping details.
+### 🔥 1. Profitability & Discount Analysis
 
----
+* Category-wise sales and profit comparison
+* Profit margin analysis
+* Discount vs Profit relationship
+* Discount bucketing to identify loss thresholds
 
-## 📊 Key Business Questions
-
-* What is the overall profit margin?
-* What % of orders are loss-making?
-* How do discounts impact profitability?
-* Which categories and regions drive profit or loss?
-* Who are the highest-value customers?
+👉 **Key Finding:** High discounts significantly reduce profitability, especially beyond certain thresholds.
 
 ---
 
-## 📈 Dashboard Overview
+### 📈 2. Sales vs Profit Relationship
 
-### Executive Overview
+* Scatter analysis of sales vs profit
 
+👉 **Insight:** High revenue does not always translate to profit due to discounting and cost factors.
+
+---
+
+### 📅 3. Time Trend Analysis
+
+* Year-wise sales and profit trends
+
+👉 **Insight:** Sales show steady growth, but profit growth requires monitoring.
+
+---
+
+### 👥 4. Customer Behavior
+
+* Orders per customer
+* Repeat vs new customers
+
+👉 **Insight:** Repeat customers contribute the majority of revenue.
+
+---
+
+### ⚠️ 5. Loss Analysis
+
+* Percentage of loss-making orders
+* Category-level loss contribution
+
+👉 **Insight:** A significant portion of orders are loss-making due to pricing inefficiencies.
+
+---
+
+### 🌍 6. Supporting Analysis
+
+* Region-wise performance
+* Product-level performance (Top & Bottom)
+
+---
+
+## 🗄 SQL Analysis (MySQL)
+
+### Key Business Questions Answered:
+
+* Overall business performance (Sales, Profit, Margin)
+* Category & sub-category profitability
+* Loss-making orders and categories
+* Discount impact on profit
+* Sales and profit trends over time
+* Top customers and repeat customer behavior
+* Regional performance
+* Identification of high-loss products
+
+👉 **Advanced SQL Concepts Used:**
+
+* Aggregations (SUM, AVG, COUNT)
+* CASE statements (discount bucketing)
+* Subqueries (repeat customer detection)
+* Grouping & filtering for business insights
+
+---
+
+## 📊 Power BI Dashboard
+
+### 🔹 Page 1: Executive Overview
+
+* KPIs: Sales, Orders, Customers, Profit, Margin
+* Sales & Profit trends over time
+* Category, region, and segment performance
+* Customer retention insights
+
+👉 **Purpose:** High-level business performance snapshot
 ![Executive Overview](Dashboard/executive_overview.png)
-### Profitability & Performance Analysis
 
-![Profitability Dashboard](Dashboard/profitability_dashboard.png)
+---
+### 🔹 Page 2: Profitability & Operations
+
+* Profit margin by category
+* Discount impact on profitability
+* Loss orders percentage
+* Top & bottom products
+* Shipping efficiency analysis
+
+👉 **Purpose:** Identify profit leakage and operational inefficiencies
+![Executive Overview](Dashboard/profitability_dashboard.png)
 
 ---
 
-## 🔍 Key Insights (Quantified)
+## 🔍 Key Insights
 
-* 💰 **Total Sales:** 12.6M
-
-* 📈 **Total Profit:** 1.47M
-
-* 📊 **Profit Margin:** 11.6% → indicates moderate profitability
-
-* ⚠️ **30.1% of total orders are loss-making** → critical business issue
-
-* 💸 **Discount Impact:**
-
-  * Discounts above **30% consistently lead to negative profit**
-  * High-discount segments contribute disproportionately to losses
-
-* 📦 **Category Performance:**
-
-  * Technology → ~14% profit margin (highest)
-  * Office Supplies → ~13.7% profit margin
-  * Furniture → ~6.9% profit margin (underperforming)
-
-* 👥 **Customer Insights:**
-
-  * Total Customers: 4,447
-  * A small segment (~20%) contributes majority of revenue (Pareto effect)
-
-* 🌍 **Regional Trends:**
-
-  * Certain regions generate high sales but lower profit due to shipping and discounting
-  * Shipping cost contributes ~10.7% of sales → impacts margins
+- Discounts above ~30% consistently lead to negative profit margins  
+- Furniture category generates high revenue but operates at low profitability  
+- High-value orders can still be loss-making due to aggressive discounting  
+- Profit growth is not aligned with sales growth, indicating cost inefficiencies  
+- Repeat customers contribute a significant share of total revenue  
+- A notable percentage of total orders are loss-making  
+- Specific products consistently generate losses, indicating pricing issues   
 
 ---
 
-## 💡 Business Recommendations
+## 💡 Recommendations
 
-* Reduce discounting beyond 30% to prevent losses
-* Focus on high-margin categories like Technology and Office Supplies
-* Re-evaluate pricing and cost structure for Furniture category
-* Target top 20% high-value customers for retention and upselling
-* Optimize logistics to reduce shipping costs in low-profit regions
-
----
-
-## 🧾 SQL Analysis Highlights
-
-* Calculated overall sales, profit, and profit margins
-* Identified loss-making orders (~30%)
-* Analyzed discount vs profit relationship
-* Performed category and regional performance analysis
-* Identified top customers and repeat customer behavior
+* Reduce excessive discounting, especially in loss-making categories
+* Focus on high-margin products (e.g., Technology)
+* Optimize pricing strategies to improve profitability
+* Strengthen customer retention strategies
+* Monitor and address loss-making products
+* Improve operational efficiency in shipping and delivery
 
 ---
 
 ## 📁 Project Structure
 
 ```
-global-superstore-analysis/
+walmart-sales-analysis/
 │
-├── data/                  # Dataset
-├── sql/                   # SQL queries
-├── notebooks/             # EDA & ETL (Python)
-├── dashboard/             # Power BI file
-├── images/                # Dashboard screenshots
+├── data/
+├── notebooks/
+│   ├── 01_etl.ipynb
+│   ├── 02_eda.ipynb
+├── sql/
+│   └── analysis.sql
+├── dashboard/
+│   └── walmart_dashboard.pbix
+├── images/
+│   └── dashboard_preview.png
 └── README.md
 ```
+---- 
+## 📈 Business Impact
 
+- Identified key profit leakage areas driven by high discounting  
+- Highlighted loss-making products contributing to revenue inefficiency  
+- Enabled data-driven decision-making for pricing and discount strategies  
+- Provided insights to improve customer retention and profitability   
 ---
 
 ## 🚀 Conclusion
 
-This analysis highlights key profitability challenges driven by discount strategies, category inefficiencies, and operational costs. By addressing these areas, the business can significantly improve margins and overall performance.
+This project demonstrates an end-to-end data analysis workflow—from data preparation and exploration to business-driven insights and interactive dashboards—focused on improving profitability and operational efficiency.
+
+---
+
+## 📌 Future Improvements
+
+* Build predictive model for profit optimization
+* Customer segmentation using clustering
+* Advanced cohort analysis for retention
 
 ---
