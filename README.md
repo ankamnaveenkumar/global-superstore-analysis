@@ -1,4 +1,4 @@
-# 🛒 Global Superstore Sales Profitability Analysis
+# 🛒 Global Superstore Sales and Profitability Analysis
 
 ## 📌 Objective
 
